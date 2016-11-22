@@ -1,0 +1,62 @@
+#include<iostream>
+#include<list>
+using  namespace std;
+list<string>sp;
+list<string>::iterator i;
+void fill_list () 
+{
+
+string a[14];
+a[1] = "Adi"; a[2]= "Andrei"; a[3] = "Anna-Mariq";	a[4] = "Blagovest"; a[5] = "BorislaV";  //some random names the task requires
+a[6] = "Georgi"; a[7] = "Denislav"; a[8] = "Iskren"; a[9] = "Yoanna"; a[10] = "Kaloqn"; 
+a[11] = "Lilqna"; a[12] = "Magdalena"; a[13] = "Martin";
+for(int z=1; z<=13; z++) sp.push_back(a[z]);  		
+}
+//
+ void show_list()
+{  int z=0;
+	   i=sp.begin();
+    while (!sp.empty())
+     { z++;
+	  cout<<z<<"."<<*i<<endl;i++;
+      sp.pop_front();
+	  }
+}
+	void eraze_elementZ() 
+	{   
+		i=sp.end();
+		i--;	
+		i--;
+		cout<<"Erazing:"<<*i<<endl; // *i => i--; i--; => the element before the last one
+        sp.erase(i); // Erase function
+
+}
+void add_elementX() {
+	i=sp.end();
+	i--;
+	i--;
+	cout<<"Adding the elementX"<<endl;
+	sp.insert(i,"X"); //insert function
+}
+void add_elementY() {
+	i=sp.end();
+	i--;
+	i--;
+	i--;
+	i--;
+	i--;
+	cout<<"Adding the elementY"<<endl;
+	sp.insert(i,"Y");
+}
+
+
+int main() {
+
+fill_list();
+eraze_elementZ();
+add_elementX();
+add_elementY();
+show_list();
+
+	return 0;
+}
